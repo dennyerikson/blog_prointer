@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,15 +13,64 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Prointer</title>
 </head>
 <body>
     <div class="jumbotron text-center">
+        <img class="img-responsive" src=" {% static 'blog/img/logo.png' %} " width="150">
         <h1>Prointer</h1>
-      </div>
-    {% block content %}
 
-    {% endblock %}
+        <form class="input-group" action="" method="GET">
+                <div class="input-group">
+                        <input name="search" type="text" class="form-control" placeholder="Search Blog..">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+        </form>
+    </div>
 
+    <div class="container-fluid">
+            <div class="row content">
+              <div class="col-sm-3 sidenav">
+                  <br>
+                <form action="" method="GET">
+                    <ul class="nav nav-pills nav-stacked" action="" method="GET">
+                        <li class="active"><a href="/?index=1">Inicio</a></li>
+                        <li ><a href="/?index=4">O Administrador de Sistemas</a></li>
+                        <li><a href="#">Sistemas Operacionais</a></li>
+                        <style>#li{margin-left: 50px}</style>
+                        <li id="li"><a href="#">Sistemas Operacionais para desktops on-line</a></li>
+                        <li id="li"><a href="/?index=5">Sistemas Operacionais desktop</a></li>
+        
+                        <li><a href="#" >Subsistema de memória</a></li>
+                        <li><a href="#">Comparativo dipositivo mobile x desktop</a></li>
+                        <li><a href="#">Armazenamento em nuvem</a></li>
+                        <li><a href="#">Dispositivos móveis</a></li>
+                        <li><a href="#">Analise dos sistemas propostos</a></li>
+                        <li><a href="#">Arquitetura de computadores</a></li>
+                        <li><a href="#">Conclusão</a></li>
+                        <li><a href="#">Sobre</a></li>
+                    </ul>
+                </form>
+
+            </div>
+          
+            <div class="col-sm-9">
+                    <!-- block aqui -->
+                    {% block content %}
+
+                    {% endblock %}
+                
+              </div>
+            </div>
+          </div>
+          
+          <footer class="container-fluid">
+            <p>TADS 5º série - 2018</p>
+          </footer>
 </body>
 </html>
