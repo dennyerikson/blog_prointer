@@ -80,4 +80,12 @@
 
 .jumbotron{
     margin-bottom: 0;
+    height: 150px;
 }
+
+.footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    margin-bottom: 0px;
+  }

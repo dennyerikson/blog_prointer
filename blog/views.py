@@ -16,9 +16,12 @@ def post_list(request):
 
     elif index:   
         post = Post.objects.filter(index=index)
-        
+
     else:
         post = Post.objects.filter(index='1')
     
     context = {'post': post}
     return render(request, 'blog/post_list.html', context)
+
+def sobre(request):
+    return render(request, 'blog/sobre.html', {})

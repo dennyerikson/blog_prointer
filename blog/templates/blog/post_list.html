@@ -11,8 +11,9 @@
 </style>
 {% block content %}
     {% for posts in post %}
-    <h1>{{posts.title}}</h1>
+    <h2>{{posts.title}}</h2>
     <p id="p">{{posts.text|linebreaks}}</p>
+    <br>
     <br>
     <h4>{{posts.create_date}}</h4>
     {% endfor %}
