@@ -25,3 +25,6 @@ def post_list(request):
 
 def sobre(request):
     return render(request, 'blog/sobre.html', {})
+
+def disp_moveis(request):
+    return render(request, 'blog/disp_moveis.html', {})
